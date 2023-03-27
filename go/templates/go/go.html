@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+</head>
+<body>
+<h1>Previous URL:</h1>
+<a href='{{ previousurl }}' target='_blank' rel='noreferrer'>{{ previousurl }}</a>
+
+<h1>Put your url</h1>
+<form name="search" action="form_action" method="post">
+  {% csrf_token %}
+  <label for="fname">Web page:</label>
+  <input type="text" id="weburl_text" name="weburl_text" style="width: 90%;">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h1>Updated URL:</h1>
+<a href='{{ form.weburl_text.value }}' target='_blank' rel='noreferrer'>{{ form.weburl_text.value }}</a>
+</body>
+</html>

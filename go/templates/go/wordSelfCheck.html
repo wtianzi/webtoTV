@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<h1>Check your words</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>English</th>
+        <th>Chinese</th>
+    </tr>
+    {% for item in query_results %}
+    <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.eng_word }}</td>
+        <td>{{ item.chi_word }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+
+<script>
+// load word from database
+
+</script>
+</html>
